@@ -112,6 +112,12 @@ import InteractiveCircle from "./interactive-circle.jsx";
             margin-top: -60px;
         }
     }
+    @media (max-width: 478px) {
+        .circle {
+            width: 95%;
+            height: calc((100vw * 0.95) - 30px);
+        }
+    }
 </style>
 <script>
     const leftCircle = new IntersectionObserver((entries) => {
@@ -121,9 +127,11 @@ import InteractiveCircle from "./interactive-circle.jsx";
                 element.target.style.filter = "blur(0px)";
                 element.target.style.transform = "rotate(0deg)";
             } else {
-                element.target.style.opacity = "0";
-                element.target.style.filter = "blur(5px)";
-                element.target.style.transform = "rotate(-180deg)";
+                if (window.innerWidth > 478) {
+                    element.target.style.opacity = "0";
+                    element.target.style.filter = "blur(5px)";
+                    element.target.style.transform = "rotate(-180deg)";
+                }
             }
         });
     });
@@ -137,7 +145,6 @@ import InteractiveCircle from "./interactive-circle.jsx";
         leftCircle.observe(el);
     });
 
-
     const rightCircle = new IntersectionObserver((entries) => {
         entries.forEach((element) => {
             if (element.isIntersecting) {
@@ -145,9 +152,11 @@ import InteractiveCircle from "./interactive-circle.jsx";
                 element.target.style.filter = "blur(0px)";
                 element.target.style.transform = "rotate(0deg)";
             } else {
-                element.target.style.opacity = "0";
-                element.target.style.filter = "blur(5px)";
-                element.target.style.transform = "rotate(180deg)";
+                if (window.innerWidth > 478) {
+                    element.target.style.opacity = "0";
+                    element.target.style.filter = "blur(5px)";
+                    element.target.style.transform = "rotate(180deg)";
+                }
             }
         });
     });
