@@ -74,11 +74,11 @@ const navbar = () => {
           </li>
           {open &&
             <>
-             <a style={{color:"#fff",fontSize:"20px"}} href="/marbre"> <p className='btoline'>Entretien marbre</p>
+             <a style={{ display:"block", fontWeight:"100",color:"#fff",fontSize:"20px"}} href="/marbre"> <p className='btoline'>Entretien marbre</p>
               </a>
-              <a style={{color:"#fff",fontSize:"20px"}} href="/tapis"> <p className='btoline'>Nettoyage tapisserie</p>
+              <a style={{ display:"block", fontWeight:"100",color:"#fff",fontSize:"20px"}} href="/tapis"> <p className='btoline'>Nettoyage tapisserie</p>
              </a> 
-             <a style={{color:"#fff",fontSize:"20px"}} href="/moquette"> <p>nettoyage moquette</p>
+             <a style={{color:"#fff", fontWeight:"100",fontSize:"20px"}} href="/moquette"> <p>nettoyage moquette</p>
               </a>  
              
              </>}
